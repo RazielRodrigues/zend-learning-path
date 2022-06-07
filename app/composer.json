@@ -17,12 +17,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Application\\": "module/Application/src/"
+            "Application\\": "module/Application/src/",
+            "Pessoa\\": "module/Pessoa/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ApplicationTest\\": "module/Application/test/"
+            "ApplicationTest\\": "module/Application/test/",
+            "PessoaTest\\": "module/Pessoa/test/"
         }
     },
     "scripts": {
