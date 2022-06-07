@@ -13,7 +13,6 @@ class ComposerStaticInita7ace024d2fe5538ac6754998ed1214b
             'Zend\\Validator\\' => 15,
             'Zend\\Uri\\' => 9,
             'Zend\\Stdlib\\' => 12,
-            'Zend\\SkeletonInstaller\\' => 23,
             'Zend\\ServiceManager\\' => 20,
             'Zend\\Router\\' => 12,
             'Zend\\Mvc\\' => 9,
@@ -30,6 +29,8 @@ class ComposerStaticInita7ace024d2fe5538ac6754998ed1214b
         'P' => 
         array (
             'Psr\\Container\\' => 14,
+            'Pessoa\\' => 7,
+            'PessoaTest\\' => 11,
         ),
         'I' => 
         array (
@@ -58,10 +59,6 @@ class ComposerStaticInita7ace024d2fe5538ac6754998ed1214b
         'Zend\\Stdlib\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-stdlib/src',
-        ),
-        'Zend\\SkeletonInstaller\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-skeleton-installer/src',
         ),
         'Zend\\ServiceManager\\' => 
         array (
@@ -114,6 +111,14 @@ class ComposerStaticInita7ace024d2fe5538ac6754998ed1214b
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Pessoa\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Pessoa/src',
+        ),
+        'PessoaTest\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Pessoa/test',
         ),
         'Interop\\Container\\' => 
         array (

@@ -13,4 +13,34 @@ class PessoaController extends AbstractActionController
             'content' => 'Placeholder page'
         ]);
     }
+
+    public function adicionarAction()
+    {
+        return new ViewModel([
+            'content' => 'Placeholder page'
+        ]);
+    }
+
+
+    public function listarAction()
+    {
+        return new ViewModel([
+            'content' => 'Placeholder page'
+        ]);
+    }
+
+    public function editarAction()
+    {
+        return new ViewModel([
+            'content' => 'Placeholder page'
+        ]);
+    }
+
+    public function deletarAction()
+    {
+        return new ViewModel([
+            'content' => 'Placeholder page'
+        ]);
+    }
+
 }

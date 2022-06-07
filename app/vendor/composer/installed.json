@@ -735,59 +735,6 @@
         "abandoned": "laminas/laminas-servicemanager"
     },
     {
-        "name": "zendframework/zend-skeleton-installer",
-        "version": "0.1.7",
-        "version_normalized": "0.1.7.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/zendframework/zend-skeleton-installer.git",
-            "reference": "57f48b8793d705de19bc265f34ad6185a7eac3d6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zend-skeleton-installer/zipball/57f48b8793d705de19bc265f34ad6185a7eac3d6",
-            "reference": "57f48b8793d705de19bc265f34ad6185a7eac3d6",
-            "shasum": ""
-        },
-        "require": {
-            "composer-plugin-api": "^1.0",
-            "php": "^5.6 || ^7.0",
-            "zendframework/zend-component-installer": "^1.0 || ^2.1.2"
-        },
-        "require-dev": {
-            "composer/composer": "^1.4.1",
-            "malukenho/docheader": "^0.1.7",
-            "mikey179/vfsstream": "^1.6.7",
-            "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.4",
-            "zendframework/zend-coding-standard": "~1.0.0"
-        },
-        "time": "2019-11-15T15:27:16+00:00",
-        "type": "composer-plugin",
-        "extra": {
-            "class": "Zend\\SkeletonInstaller\\Plugin",
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Zend\\SkeletonInstaller\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "description": "Installer plugin for Zend Framework skeleton application",
-        "keywords": [
-            "ZendFramework",
-            "skeleton-installer",
-            "zf"
-        ],
-        "abandoned": "laminas/laminas-skeleton-installer"
-    },
-    {
         "name": "zendframework/zend-stdlib",
         "version": "3.2.1",
         "version_normalized": "3.2.1.0",
