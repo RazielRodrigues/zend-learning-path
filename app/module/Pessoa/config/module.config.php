@@ -2,6 +2,8 @@
 
 namespace Pessoa;
 
+use Zend\ServiceManager\Factory\InvokableFactory;
+
 return [
     'router' => [
         'routes' => [
@@ -19,6 +21,11 @@ return [
                     ],
                 ]
             ],
+        ],
+    ],
+    'controllers' => [
+        'factories' => [
+            Controller\PessoaController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [
