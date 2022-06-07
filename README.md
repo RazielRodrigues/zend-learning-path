@@ -27,3 +27,5 @@
         - src: where yours business code will be
         - test: where yours tests will be
         - view: where yours views will be
+
+tutorial: https://www.youtube.com/watch?v=SxVrYHVLkxY&list=PL-gbes0UxLJMMQVuRvgmp-yBNxQIbpBL8&index=5
