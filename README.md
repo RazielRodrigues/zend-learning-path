@@ -25,7 +25,13 @@
             - create a module.config.php file
             - put your routes configuration as array
         - src: where yours business code will be
+            - create a Module.php file
+            - include the file above inside the getConfig method
         - test: where yours tests will be
         - view: where yours views will be
+
+    - registrar o novo modulo no module.config.php
+    
+    - composer update
 
 tutorial: https://www.youtube.com/watch?v=SxVrYHVLkxY&list=PL-gbes0UxLJMMQVuRvgmp-yBNxQIbpBL8&index=5
