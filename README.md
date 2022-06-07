@@ -24,14 +24,29 @@
         - config: it works like a annotation file
             - create a module.config.php file
             - put your routes configuration as array
-        - src: where yours business code will be
-            - create a Module.php file
-            - include the file above inside the getConfig method
-        - test: where yours tests will be
-        - view: where yours views will be
+        - src: where yours business code will be (MC)
 
-    - registrar o novo modulo no module.config.php
+            model:
+                - create a Module.php file
+                - include the module.config.php file inside the getConfig method
+            
+            controller:
+                - create a Controller folder
+                - create a ModuleController.php file
+        - view: where yours views will be
+            - create a folder for your module with snake_case
+                - create a .phtml file inside do some front-end stuff
+
+        - test: where yours tests will be
+
+##### Registering a new module
     
+    - add to composer.json
+        - autoload
+            - "psr-4": {
+                "YourModuleNamespace\\": "PathTo/",
+            }
+    - add to app/config/modules.config.php
     - composer update
 
 tutorial: https://www.youtube.com/watch?v=SxVrYHVLkxY&list=PL-gbes0UxLJMMQVuRvgmp-yBNxQIbpBL8&index=5
