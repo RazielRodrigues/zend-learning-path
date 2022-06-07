@@ -1,4 +1,4 @@
-FROM php:8.0-fpm
+FROM php:7.4-fpm
 
 RUN apt update \
     && apt install -y zlib1g-dev g++ libicu-dev zip libzip-dev zip \
@@ -10,4 +10,4 @@ RUN apt update \
 
 WORKDIR /var/www/zend_docker
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.26
