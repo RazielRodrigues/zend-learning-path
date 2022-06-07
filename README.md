@@ -1,1 +1,1 @@
-# zend-learning-path
+# Getting Started
