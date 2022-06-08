@@ -19,6 +19,7 @@ return array(
     'Zend\\Http\\' => array($vendorDir . '/zendframework/zend-http/src'),
     'Zend\\EventManager\\' => array($vendorDir . '/zendframework/zend-eventmanager/src'),
     'Zend\\Escaper\\' => array($vendorDir . '/zendframework/zend-escaper/src'),
+    'Zend\\Db\\' => array($vendorDir . '/zendframework/zend-db/src'),
     'Zend\\Config\\' => array($vendorDir . '/zendframework/zend-config/src'),
     'Zend\\ComponentInstaller\\' => array($vendorDir . '/zendframework/zend-component-installer/src'),
     'ZF\\DevelopmentMode\\' => array($vendorDir . '/zfcampus/zf-development-mode/src'),
