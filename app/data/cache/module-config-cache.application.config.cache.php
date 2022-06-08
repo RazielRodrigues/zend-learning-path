@@ -9,6 +9,7 @@ return array (
       'Router' => 'Zend\\Router\\RouteStackInterface',
       'RoutePluginManager' => 'Zend\\Router\\RoutePluginManager',
       'ValidatorManager' => 'Zend\\Validator\\ValidatorPluginManager',
+      'Zend\\Db\\Adapter\\Adapter' => 'Zend\\Db\\Adapter\\AdapterInterface',
     ),
     'factories' => 
     array (
@@ -16,6 +17,11 @@ return array (
       'Zend\\Router\\RoutePluginManager' => 'Zend\\Router\\RoutePluginManagerFactory',
       'Zend\\Router\\RouteStackInterface' => 'Zend\\Router\\RouterFactory',
       'Zend\\Validator\\ValidatorPluginManager' => 'Zend\\Validator\\ValidatorPluginManagerFactory',
+      'Zend\\Db\\Adapter\\AdapterInterface' => 'Zend\\Db\\Adapter\\AdapterServiceFactory',
+    ),
+    'abstract_factories' => 
+    array (
+      0 => 'Zend\\Db\\Adapter\\AdapterAbstractServiceFactory',
     ),
   ),
   'route_manager' => 
@@ -76,7 +82,6 @@ return array (
     'factories' => 
     array (
       'Application\\Controller\\IndexController' => 'Zend\\ServiceManager\\Factory\\InvokableFactory',
-      'Pessoa\\Controller\\PessoaController' => 'Zend\\ServiceManager\\Factory\\InvokableFactory',
     ),
   ),
   'view_manager' => 
@@ -98,5 +103,13 @@ return array (
       0 => '/var/www/zend_docker/module/Application/config/../view',
       'pessoa' => '/var/www/zend_docker/module/Pessoa/config/../view',
     ),
+  ),
+  'db' => 
+  array (
+    'driver' => 'Pdo_Mysql',
+    'database' => 'zend',
+    'username' => 'root',
+    'password' => 'secret',
+    'hostname' => 'database',
   ),
 );

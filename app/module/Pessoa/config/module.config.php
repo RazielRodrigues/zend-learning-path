@@ -25,12 +25,19 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            Controller\PessoaController::class => InvokableFactory::class,
+            // Controller\PessoaController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [
         'template_path_stack' => [
             'pessoa' => __DIR__ . '/../view',
         ],
+    ],
+    'db' => [
+        'driver' => 'Pdo_Mysql',
+        'database' => 'zend',
+        'username' => 'root',
+        'password' => 'secret',
+        'hostname' => 'database',
     ],
 ];

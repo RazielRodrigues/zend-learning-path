@@ -7,6 +7,7 @@ use Zend\Router\Exception\RuntimeException;
 use Zend\Db\TableGateway\TableGatewayInterface;
 
 class PessoaTable {
+    
     private $tableGateway;
 
     public function __construct(TableGatewayInterface $tableGateway)
