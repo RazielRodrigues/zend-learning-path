@@ -2,6 +2,7 @@
 
 namespace Pessoa\Model;
 
+use Pessoa\Model\Pessoa;
 use Zend\Router\Exception\RuntimeException;
 use Zend\Db\TableGateway\TableGatewayInterface;
 
@@ -31,6 +32,31 @@ class PessoaTable {
         }
 
         return $row;
+    }
+    
+    public function save(Pessoa $pessoa)
+    {
+        $data = [
+            'id' => $pessoa->getId(),
+            'nome' => $pessoa->getNome(),
+            'sobrenome' => $pessoa->getSobrenome(),
+            'email' => $pessoa->getEmail(),
+            'status' => $pessoa->getStatus(),
+        ];
+
+        $id = (int) $pessoa->getId();
+        if ($id === 0) {
+            $this->tableGateway->insert($data);
+            return;
+        }
+
+        $this->tableGateway->update($data, ['id' => $id]);
+
+    }
+
+    public function delete($id)
+    {
+        $this->tableGateway->delete(['id' => (int) $id]);
     }
 
 }
