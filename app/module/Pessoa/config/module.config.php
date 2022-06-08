@@ -2,8 +2,6 @@
 
 namespace Pessoa;
 
-use Zend\ServiceManager\Factory\InvokableFactory;
-
 return [
     'router' => [
         'routes' => [

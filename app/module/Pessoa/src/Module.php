@@ -20,11 +20,11 @@ class Module implements ConfigProviderInterface
     {
         return [
             'factories' => [
-                PessoaTable::class => function ($container) {
-                    $tableGateway = $container->get(TableGateway::class);
-                    return new PessoaTable($tableGateway);
+                Model\PessoaTable::class => function ($container) {
+                    $tableGateway = $container->get(Model\PessoaTableGateway::class);
+                    return new Model\PessoaTable($tableGateway);
                 },
-                PessoaTableGateway::class => function ($container) {
+                Model\PessoaTableGateway::class => function ($container) {
                     $dbAdapter = $container->get(AdapterInterface::class);
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype->setArrayObjectPrototype(new Model\Pessoa());
@@ -40,7 +40,7 @@ class Module implements ConfigProviderInterface
             'factories' => [
                 PessoaController::class => function ($container) {
                     return new PessoaController(
-                        $container->get(PessoaTable::class)
+                        $container->get(Model\PessoaTable::class)
                     );
                 },
             ],
