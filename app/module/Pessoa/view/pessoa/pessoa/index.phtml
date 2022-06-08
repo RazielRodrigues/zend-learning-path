@@ -1,5 +1,28 @@
-<?php
+<h1>Lista de pessoas:</h1>
 
-var_dump($pessoas);
-
-?>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Email</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($pessoas as $pessoa) : ?>
+            <tr>
+                <td><?= $pessoa->getId() ?></td>
+                <td><?= $pessoa->getNome() ?></td>
+                <td><?= $pessoa->getSobrenome() ?></td>
+                <td><?= $pessoa->getEmail() ?></td>
+                <td><?= $pessoa->getStatus() ?></td>
+                <td>
+                    <a href="/pessoa/editar/<?= $pessoa->getId() ?>">Editar</a>
+                    <a href="/pessoa/deletar/<?= $pessoa->getId() ?>">Excluir</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
