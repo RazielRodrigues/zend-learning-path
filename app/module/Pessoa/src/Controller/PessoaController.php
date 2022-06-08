@@ -2,6 +2,7 @@
 
 namespace Pessoa\Controller;
 
+use Pessoa\Form\PessoaForm;
 use Zend\View\Model\ViewModel;
 use Zend\Mvc\Controller\AbstractActionController;
 
@@ -24,38 +25,85 @@ class PessoaController extends AbstractActionController
 
     public function adicionarAction()
     {
-        return new ViewModel([
-            'content' => 'Placeholder page'
-        ]);
-    }
 
+        $form = new \Pessoa\Form\PessoaForm();
+        $form->get('submit')->setValue('Adicionar');
+        $request = $this->getRequest();
 
-    public function listarAction()
-    {
-        return new ViewModel([
-            'content' => 'Placeholder page'
-        ]);
+        if (!$request->isPost()) {
+            return new ViewModel([
+                'form' => $form
+            ]);
+        }
+
+        $pessoa = new \Pessoa\Model\Pessoa();
+        $form->setData($request->getPost());
+        if (!$form->isValid()) {
+            return new ViewModel([
+                'form' => $form
+            ]);
+        }
+
+        $pessoa->exchangeArray($form->getData());
+        $this->table->save($pessoa);
+
+        return $this->redirect()->toRoute('pessoa');
     }
 
     public function editarAction()
-    {
-        return new ViewModel([
-            'content' => 'Placeholder page'
-        ]);
+    {   
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if ( 0 === $id ) {
+            return $this->redirect()->toRoute('pessoa', ['action' => 'adicionar']);
+        }
+        try {
+            $pessoa = $this->table->getById($id);
+        } catch (\Exception $e) {
+            return $this->redirect()->toRoute('pessoa', ['action' => 'index']);
+        }
+        $form = new PessoaForm();
+        $form->bind($pessoa);
+        $form->get('submit')->setAttribute('value', 'Editar');
+        $request = $this->getRequest();
+        $viewData = ['id' => $id, 'form' => $form];
+        if (!$request->isPost()) {
+            return $viewData;
+        }
+
+        $form->setData($request->getPost());
+        if (!$form->isValid()) {
+            return $viewData;
+        }
+
+        $this->table->save($form->getData());
+
+        return $this->redirect()->toRoute('pessoa');
+
+
     }
 
     public function deletarAction()
     {
-        return new ViewModel([
-            'content' => 'Placeholder page'
-        ]);
-    }
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if (!$id) {
+            return $this->redirect()->toRoute('pessoa');
+        }
 
-    public function confirmarAction()
-    {
-        return new ViewModel([
-            'content' => 'Placeholder page'
-        ]);
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $del = $request->getPost('del', 'Não');
+            if ($del == 'Sim') {
+                $id = (int) $request->getPost('id');
+                $this->table->delete($id);
+            }
+
+            return $this->redirect()->toRoute('pessoa');
+        }
+
+        return [
+            'id'    => $id,
+            'pessoa' => $this->table->getById($id)
+        ];
     }
 
 }
