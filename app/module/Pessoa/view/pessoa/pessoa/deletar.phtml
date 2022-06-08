@@ -1,1 +1,13 @@
-<H1>DELETAR</H1>
+<?php
+$title = 'Remover Pessoa';
+$this->headTitle($title);
+?>
+<h1><?=$this->escapeHtml($title)?></h1>
+<p>
+    Você tem certeza que deseja remover a pessoa <strong><?=$this->escapeHtml($pessoa->getNome())?></strong>?
+</p>
+<form action="<?=$this->url('pessoa', ['action' => 'deletar', 'id' => $pessoa->getId()])?>" method="post">
+    <input type="hidden" name="id" value="<?=$pessoa->getId()?>" />
+    <input type="submit" name="del" value="Sim" class="btn btn-danger" />
+    <a href="<?=$this->url('pessoa', ['action' => 'index'])?>" class="btn btn-default">Não</a>
+</form>
