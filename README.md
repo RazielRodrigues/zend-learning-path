@@ -26,10 +26,22 @@
             - put your routes configuration as array
         - src: where yours business code will be (MC)
 
-            model:
+            root:
                 - create a Module.php file
                 - include the module.config.php file inside the getConfig method
             
+            models:
+                - create a Model folder
+                - create a file with your module name
+                    - set the namespace to your module
+                    - put the fields from database
+                        - getters and setters to all fields
+                    - composer require zendframework/zend-db
+                - create a TableGateway class
+                    - here is where you put all of your methods
+                      to manipulate the table data
+                
+
             controller:
                 - create a Controller folder
                 - create a ModuleController.php file
