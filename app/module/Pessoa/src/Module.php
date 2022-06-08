@@ -4,9 +4,9 @@ namespace Pessoa;
 
 use Pessoa\Model\PessoaTable;
 use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\TableGateway\TableGateway;
 use Pessoa\Controller\PessoaController;
-use Zend\Http\Client\Adapter\AdapterInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
 class Module implements ConfigProviderInterface
@@ -20,11 +20,11 @@ class Module implements ConfigProviderInterface
     {
         return [
             'factories' => [
-                Model\PessoaTable::class => function ($container) {
-                    $tableGateway = $container->get(Model\PessoaTableGateway::class);
+                PessoaTable::class => function ($container) {
+                    $tableGateway = $container->get(TableGateway::class);
                     return new PessoaTable($tableGateway);
                 },
-                Model\PessoaTableGateway::class => function ($container) {
+                PessoaTableGateway::class => function ($container) {
                     $dbAdapter = $container->get(AdapterInterface::class);
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype->setArrayObjectPrototype(new Model\Pessoa());
@@ -38,9 +38,9 @@ class Module implements ConfigProviderInterface
     {
         return [
             'factories' => [
-                Controller\PessoaController::class => function ($container) {
-                    return new Controller\PessoaController(
-                        $container->get(Model\PessoaTable::class)
+                PessoaController::class => function ($container) {
+                    return new PessoaController(
+                        $container->get(PessoaTable::class)
                     );
                 },
             ],

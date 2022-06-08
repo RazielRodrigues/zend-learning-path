@@ -53,7 +53,9 @@
         - test: where yours tests will be
 
 ##### Registering a new module
-    
+
+    - this step must be repeated when you add a new package inside the project
+
     - add to composer.json
         - autoload
             - "psr-4": {

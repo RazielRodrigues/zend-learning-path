@@ -23,11 +23,11 @@ return [
             ],
         ],
     ],
-    'controllers' => [
-        'factories' => [
-            // Controller\PessoaController::class => InvokableFactory::class,
-        ],
-    ],
+    // 'controllers' => [
+    //     'factories' => [
+    //         Controller\PessoaController::class => InvokableFactory::class,
+    //     ],
+    // ],
     'view_manager' => [
         'template_path_stack' => [
             'pessoa' => __DIR__ . '/../view',
