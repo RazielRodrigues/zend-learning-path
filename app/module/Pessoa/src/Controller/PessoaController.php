@@ -2,6 +2,7 @@
 
 namespace Pessoa\Controller;
 
+use Pessoa\Model\Pessoa;
 use Pessoa\Form\PessoaForm;
 use Zend\View\Model\ViewModel;
 use Zend\Mvc\Controller\AbstractActionController;
@@ -26,9 +27,10 @@ class PessoaController extends AbstractActionController
     public function adicionarAction()
     {
 
-        $form = new \Pessoa\Form\PessoaForm();
-        $form->get('submit')->setValue('Adicionar');
+        $form = new PessoaForm();
+        $form->get('submit')->setValue('adicionar');
         $request = $this->getRequest();
+
 
         if (!$request->isPost()) {
             return new ViewModel([
@@ -36,7 +38,7 @@ class PessoaController extends AbstractActionController
             ]);
         }
 
-        $pessoa = new \Pessoa\Model\Pessoa();
+        $pessoa = new Pessoa();
         $form->setData($request->getPost());
         if (!$form->isValid()) {
             return new ViewModel([
@@ -46,14 +48,13 @@ class PessoaController extends AbstractActionController
 
         $pessoa->exchangeArray($form->getData());
         $this->table->save($pessoa);
-
         return $this->redirect()->toRoute('pessoa');
     }
 
     public function editarAction()
-    {   
+    {
         $id = (int) $this->params()->fromRoute('id', 0);
-        if ( 0 === $id ) {
+        if (0 === $id) {
             return $this->redirect()->toRoute('pessoa', ['action' => 'adicionar']);
         }
         try {
@@ -78,8 +79,6 @@ class PessoaController extends AbstractActionController
         $this->table->save($form->getData());
 
         return $this->redirect()->toRoute('pessoa');
-
-
     }
 
     public function deletarAction()
@@ -105,5 +104,4 @@ class PessoaController extends AbstractActionController
             'pessoa' => $this->table->getById($id)
         ];
     }
-
 }

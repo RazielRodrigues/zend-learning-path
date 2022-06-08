@@ -2,7 +2,9 @@
 
 namespace Pessoa\Model;
 
-class Pessoa
+use Zend\Stdlib\ArraySerializableInterface;
+
+class Pessoa implements ArraySerializableInterface
 {
     public $id;
     public $nome;
@@ -16,7 +18,7 @@ class Pessoa
         $this->nome = !empty($data['nome']) ? $data['nome'] : null;
         $this->sobrenome = !empty($data['sobrenome']) ? $data['sobrenome'] : null;
         $this->email = !empty($data['email']) ? $data['email'] : null;
-        $this->status = !empty($data['status']) ? $data['status'] : null;
+        $this->status = !empty($data['status']) ? $data['status'] : true;
     }
 
 
@@ -119,4 +121,16 @@ class Pessoa
 
         return $this;
     }
+
+    public function getArrayCopy()
+    {
+        return [
+            'id' => $this->id,
+            'nome' => $this->nome,
+            'sobrenome' => $this->sobrenome,
+            'email' => $this->email,
+            'status' => $this->status,
+        ];
+    }
+
 }
