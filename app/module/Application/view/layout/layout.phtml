@@ -30,13 +30,16 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <a class="navbar-brand" href="<?= $this->url('home') ?>">
-                        <img src="<?= $this->basePath('img/zf-logo-mark.svg') ?>" height="28" alt="Zend Framework <?= \Application\Module::VERSION ?>"/>&nbsp;Skeleton Application
+                        <img src="<?= $this->basePath('img/zf-logo-mark.svg') ?>" height="28" alt="Zend Framework <?= \Application\Module::VERSION ?>"/>&nbsp;
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <a class="nav-link" href="<?= $this->url('home') ?>">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<?= $this->url('pessoa') ?>">Pessoa <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                 </div>
@@ -45,8 +48,9 @@
         <div class="container">
             <?= $this->content ?>
             <hr>
-            <footer>
+            <footer class="text-center fixed-bottom">
                 <p>&copy; 2005 - <?= date('Y') ?> by Zend Technologies Ltd. All rights reserved.</p>
+                <p>Raziel Rodrigues</p>
             </footer>
         </div>
         <?= $this->inlineScript() ?>

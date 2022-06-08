@@ -4,9 +4,10 @@
     - docker-compose up
     - docker-compose exec php bash
         - composer create-project zendframework/skeleton-application .
+            - or composer install
         - access: http://localhost:8080/
-
-### Zend structure
+        - tutorial: https://www.youtube.com/watch?v=zBH-UXj8y2w&list=PL-gbes0UxLJMMQVuRvgmp-yBNxQIbpBL8
+##### Structure
 
     - bin: binaries
     - config: project environment configuration
@@ -60,5 +61,3 @@
             }
     - add to app/config/modules.config.php
     - composer update
-
-tutorial: https://www.youtube.com/watch?v=SxVrYHVLkxY&list=PL-gbes0UxLJMMQVuRvgmp-yBNxQIbpBL8&index=5
