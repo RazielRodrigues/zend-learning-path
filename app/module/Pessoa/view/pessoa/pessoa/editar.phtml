@@ -24,6 +24,10 @@ $submit->setAttribute('class', 'btn btn-primary');
 <?=$this->formElement($id)?>
 <div class="form-group">
     <div class="col-md-6 mt-2">
+        <h5><?=$this->escapeHtml($title)?></h5>
+        <hr>
+    </div>
+    <div class="col-md-6 mt-2">
         <p>Nome</p>
         <?=$this->formElement($nome)?>
         <?=$this->formElementErrors()->render($nome, ['class' => 'help-block'])?>

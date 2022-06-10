@@ -1,8 +1,7 @@
 <?php
-    $title = 'Adicionar Pessoa';
+    $title = 'Realizar cadastro';
     $this->headTitle($title);
 ?>
-<h1><?=$this->escapeHtml($title)?></h1>
 <?php
 $form->setAttribute('action', $this->url('pessoa', ['action' => 'adicionar']));
 $form->prepare();
@@ -16,36 +15,40 @@ $email = $this->form->get('email');
 $status = $this->form->get('status');
 
 $nome->setAttribute('class', 'form-control');
+$sobrenome->setAttribute('class', 'form-control');
+$email->setAttribute('class', 'form-control');
 
 $submit = $this->form->get('submit');
 $submit->setAttribute('class', 'btn btn-primary');
+$submit->setValue('Salvar');
+
 ?>
-<?=$this->formElement($id)?>
 <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-6 mt-2">
+        <h5><?=$this->escapeHtml($title)?></h5>
+        <hr>
+    </div>
+    <div class="col-md-6 mt-2">
+        <p>Nome</p>
         <?=$this->formElement($nome)?>
         <?=$this->formElementErrors()->render($nome, ['class' => 'help-block'])?>
     </div>
-</div>
-<div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-6 mt-2">
+        <p>Sobrenome</p>
         <?=$this->formElement($sobrenome)?>
         <?=$this->formElementErrors()->render($sobrenome, ['class' => 'help-block'])?>
     </div>
-</div>
-<div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-6 mt-2">
+        <p>Email</p>
         <?=$this->formElement($email)?>
         <?=$this->formElementErrors()->render($email, ['class' => 'help-block'])?>
     </div>
-</div>
-<div class="form-group">
-    <div class="col-md-6">
-        <?=$this->formElement($status)?>
+    <div class="col-md-6 mt-4">
+        <p>Ativo? <?=$this->formElement($status)?> </p>
         <?=$this->formElementErrors()->render($status, ['class' => 'help-block'])?>
     </div>
-</div>
-<div>
-    <?=$this->formElement($submit)?>
-    <div><a href="<?=$this->url('pessoa', ['action' => 'index'])?>">voltar</a></div>
+    <div class="col-md-6 mt-2">
+        <?=$this->formElement($submit)?>
+        <a class="btn btn-secondary ml-2" href="<?=$this->url('pessoa', ['action' => 'index'])?>">Voltar</a>
+    </div>
 </div>
