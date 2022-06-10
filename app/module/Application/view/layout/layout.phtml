@@ -39,17 +39,16 @@
                             <a class="nav-link" href="<?= $this->url('home') ?>">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?= $this->url('pessoa') ?>">Pessoa <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="<?= $this->url('pessoa') ?>/adicionar">Pessoa Add<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="<?= $this->url('pessoa') ?>">Cadastrar <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="container">
-            <?= $this->content ?>
+            <main class="mt-5 mb-5">
+                <?= $this->content ?>
+            </main>
             <hr>
             <footer class="text-center fixed-bottom">
                 <p>&copy; 2005 - <?= date('Y') ?> by Zend Technologies Ltd. All rights reserved.</p>

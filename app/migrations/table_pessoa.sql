@@ -1,4 +1,4 @@
-CREATE DATABASE zend;
+CREATE DATABASE IF NOT EXISTS zend;
 
 use zend;
 

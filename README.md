@@ -5,6 +5,8 @@
     - docker-compose exec php bash
         - composer create-project zendframework/skeleton-application .
             - or composer install
+        - cd ..
+        - chown -R www-data:www-data zend_docker/data/
         - access: http://localhost:8080/
         - tutorial: https://www.youtube.com/watch?v=zBH-UXj8y2w&list=PL-gbes0UxLJMMQVuRvgmp-yBNxQIbpBL8
 ##### Structure

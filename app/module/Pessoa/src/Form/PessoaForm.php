@@ -11,10 +11,10 @@ class PessoaForm extends Form
         parent::__construct('pessoa', []);
 
         $this->add( new \Zend\Form\Element\Hidden('id'));
-        $this->add( new \Zend\Form\Element\Text('nome'));
-        $this->add( new \Zend\Form\Element\Text('sobrenome'));
-        $this->add( new \Zend\Form\Element\Email('email'));
-        $this->add( new \Zend\Form\Element\Checkbox('status'));
+        $this->add( new \Zend\Form\Element\Text('nome'))->setLabel('Nome');
+        $this->add( new \Zend\Form\Element\Text('sobrenome'))->setLabel('Sobrenome');
+        $this->add( new \Zend\Form\Element\Email('email'))->setLabel('Email');
+        $this->add( new \Zend\Form\Element\Checkbox('status'))->setLabel('Status');
 
         $submit = new \Zend\Form\Element\Submit('submit');
         $submit->setAttributes(['value' => 'Salvar', 'id' => 'submitbutton']);

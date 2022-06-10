@@ -11,4 +11,3 @@ RUN apt update \
 WORKDIR /var/www/zend_docker
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.26
-RUN chown -R www-data:www-data zend_docker/data/
